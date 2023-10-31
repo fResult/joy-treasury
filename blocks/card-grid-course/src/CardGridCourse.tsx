@@ -4,12 +4,14 @@ import { Link, SvgIcon } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import Typography from "@mui/joy/Typography";
 
-export const COLORS = {
+export const COLORS = Object.freeze({
   white: "#FFF",
   vodka: "#B6B9EE",
   iris: "#434BD2",
   coolGrey: "#8D8EAD",
-} satisfies Record<string, `#${string}`>;
+}) satisfies Record<string, `#${string}`>;
+
+const TRANSITION_ALL = "all .25s ease-out";
 
 export type CardGridCourseProps = {
   icon: ReactNode;
@@ -17,8 +19,6 @@ export type CardGridCourseProps = {
   description: string;
   url: string;
 };
-
-const TRANSITION_ALL = "all .25s ease-out";
 
 const CardGridCourse: FC<CardGridCourseProps> = ({
   icon,
@@ -49,13 +49,12 @@ const CardGridCourse: FC<CardGridCourseProps> = ({
       }}
     >
       {icon}
-      {/* <icon className="card--icon" sx={{ color: COLORS.iris }} /> */}
-      <Typography // <span>
+      <Typography
         className="card--title"
         level="h3"
         sx={{ color: COLORS.iris }}
       >
-        <Link // <a>
+        <Link
           overlay
           href={url}
           sx={{

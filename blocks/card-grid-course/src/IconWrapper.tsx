@@ -1,7 +1,6 @@
 import React from "react";
 import type { FC, ReactNode } from "react";
 import { Box } from "@mui/joy";
-import { COLORS } from "./CardGridCourse";
 
 type IconWrapperProps = {
   className?: string;
